@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promodoro</title>
+    <link rel="stylesheet" href="syl.css">
+</head>
+<style>
+    body {
+        background-color: aqua;
+        background-image: url("bg2.jpg");
+        background-size: cover;
+    }
+</style>
+
+<body>
+
+    <div class="main">
+        <h1>Promodoro Timer</h1>
+        <div class="button">
+            <button onclick="start()">Start</button>
+            <button onclick="pausetimer()">PauseTimer</button>
+            <button onclick="resetTimer()">Reset</button>
+        </div>
+        <div class="circle">
+            <p id="timer"> 25:00</p>
+        </div>
+       
+    </div>
+
+    <script>
+        let totalsecond = 60 * 25;
+        let timer = null;
+        let isPaused = false;
+
+        function start() {
+
+            if (timer) return;
+
+            timer = setInterval(() => {
+
+                let minute = Math.floor(totalsecond / 60);
+                let second = totalsecond % 60;
+
+                second = second < 10 ? "0" + second : second;
+
+                document.getElementById("timer").innerText =
+                    minute + ":" + second;
+
+                totalsecond--;
+
+                if (totalsecond < 0) {
+                    clearInterval(timer);
+                    timer = null;
+                    document.getElementById("timer").innerText = "Time Over";
+                }
+
+            }, 1000);
+
+            isPaused = false;
+        }
+
+        function pausetimer() {
+
+            if (timer) {
+                clearInterval(timer);
+                timer = null;
+                isPaused = true;
+            }
+            else if (isresume) {
+                start();
+            }
+
+        }
+
+        function resetTimer() {
+
+            clearInterval(timer);
+
+            timer = null;
+            isPaused = false;
+            totalsecond = 60 * 25;
+
+            document.getElementById("timer").innerText = "25:00";
+        }
+        
+        div
+
+
+    </script>
+    <div class="music">
+        <a href="https://www.jiosaavn.com/featured-playlists/hindi" target="_blank" class="button2">Play music on jiosaavn</a>
+
+    </div>
+</body>
+
+</html>

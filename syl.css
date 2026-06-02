@@ -1,0 +1,84 @@
+h1{
+    text-align: center;
+}
+/* .button{
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin-top: 20vh;
+
+} */
+button{
+    height: 10vh;
+    width: 12vw;
+    font-size: 2vw;
+    background-color: chartreuse;
+}
+.main p{
+    text-align: center;
+    font-size: 5vw;
+}
+.main .button{
+        display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin-top: 20vh;
+}
+
+h2,h1,h3{
+    color: #0d1107;
+}
+button:hover {
+    background-color: black;
+    color: rgb(191, 2, 238);
+
+    transform: scale(1.05);
+}
+p{
+    color:;
+}
+.main {
+    animation: float 3s ease-in-out infinite;
+}
+body {
+    background-image: url("bg2.jpg");
+    background-size: cover;
+    background-position: center;
+
+    animation: zoomBg 3s infinite alternate;
+}
+.circle {
+    width: 250px;
+    height: 250px;
+
+    border: 8px solid orangered;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 20px auto;
+}
+.music{
+    color: #0d1107;
+    text-align: center;
+margin: 70px;
+}
+.button2{
+    background-color: chartreuse;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+
+}
+@keyframes zoomBg {
+    from {
+        background-size: 100%;
+    }
+    to {
+        background-size: 110%;
+    }
+}
