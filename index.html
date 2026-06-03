@@ -21,7 +21,7 @@
         <h1>Promodoro Timer</h1>
         <div class="button">
             <button onclick="start()">Start</button>
-            <button onclick="pausetimer()">PauseTimer</button>
+            <button onclick="pause()">Pause</button>
             <button onclick="resetTimer()">Reset</button>
         </div>
         <div class="circle">
@@ -62,14 +62,14 @@
             isPaused = false;
         }
 
-        function pausetimer() {
+        function pause() {
 
             if (timer) {
                 clearInterval(timer);
                 timer = null;
                 isPaused = true;
             }
-            else if (isresume) {
+            else if (isPaused) {
                 start();
             }
 
